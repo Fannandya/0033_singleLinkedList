@@ -56,4 +56,21 @@ public:
         nodeBaru->next = current;
         previous->next = nodeBaru;
     }
+    bool listEmpty()
+    {
+        return (START == NULL);
+    }
+
+    bool search(int nim, node **previous, node **current)
+    {
+        *previous = START;
+        *current = START;
+
+        while ((*current != NULL) && (nim != (*current)->noMhs))
+        {
+            *previous = *current;
+            *current = (*current)->next;
+        }
+        return (*current != NULL)
+    }
 }
