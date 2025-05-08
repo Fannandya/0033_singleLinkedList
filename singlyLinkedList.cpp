@@ -71,8 +71,9 @@ public:
             *previous = *current;
             *current = (*current)->next;
         }
-        return (*current != NULL)
+        return (*current != NULL);
     }
+
     bool delNode(int nim)
     {
         node *current, *previous;
@@ -86,5 +87,24 @@ public:
 
         delete current;
         return true;
+    }
+
+    void traverse()
+    {
+        if (listEmpty())
+        {
+            cout << "\nLis Kosong\n";
+        }
+        else
+        {
+            cout << "\nData didalam lis adalah:\\n";
+            node *currentNode = START;
+            while (currentNode != NULL)
+            {
+                cout << currentNode->noMhs << endl;
+                currentNode = currentNode->next;
+            }
+            cout << endl;
+        }
     }
 }
